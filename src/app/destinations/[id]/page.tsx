@@ -18,7 +18,6 @@ export default async function DestinationDetailPage({
     .single();
 
   if (error || !destination) {
-    console.error("Error fetching destination:", error);
     return (
       <main className="min-h-screen bg-gradient-to-br from-teal-900 to-emerald-800">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">

@@ -4,13 +4,13 @@
 
 **Blocked by:** 04
 
-**Status:** todo
+**Status:** done
 
-- [ ] Clicking a spot on the home page navigates to a detail page
-- [ ] Detail page shows the spot's name
-- [ ] Detail page shows the spot's address
-- [ ] Detail page shows the spot's latitude and longitude coordinates
-- [ ] Detail page shows the spot's photo
-- [ ] Detail page shows the spot's full description
-- [ ] Detail page is responsive and works on mobile
-- [ ] Works on the live URL
+- [x] Clicking a spot on the home page navigates to a detail page
+- [x] Detail page shows the spot's name
+- [x] Detail page shows the spot's address
+- [x] Detail page shows the spot's latitude and longitude coordinates
+- [x] Detail page shows the spot's photo
+- [x] Detail page shows the spot's full description
+- [x] Detail page is responsive and works on mobile
+- [x] Works on the live URL
