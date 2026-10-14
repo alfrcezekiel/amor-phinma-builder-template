@@ -4,10 +4,10 @@
 
 **Blocked by:** 03
 
-**Status:** todo
+**Status:** done
 
-- [ ] Home page shows welcome text about destinations in Iloilo City and Iloilo Province
-- [ ] Home page displays a list of mountain/hiking spots from the database
-- [ ] Each spot in the list shows name, photo, and preview text
-- [ ] List is responsive and works on mobile
-- [ ] Works on the live URL
+- [x] Home page shows welcome text about destinations in Iloilo City and Iloilo Province
+- [x] Home page displays a list of mountain/hiking spots from the database
+- [x] Each spot in the list shows name, photo, and preview text
+- [x] List is responsive and works on mobile
+- [x] Works on the live URL

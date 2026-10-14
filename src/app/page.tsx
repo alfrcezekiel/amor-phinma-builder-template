@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function Home() {
   const [destinations, setDestinations] = useState<any[]>([]);
@@ -35,16 +36,16 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       {/* Hero Section with Background */}
-      <section className="relative min-h-screen">
+      <section className="relative min-h-screen bg-gradient-to-br from-teal-800 via-emerald-700 to-green-600">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80"
             alt="Iloilo sunset"
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover opacity-40"
           />
-          {/* Warm gradient overlay */}
-          <div className="absolute inset-0 bg-linear-to-br from-orange-400/40 via-rose-500/40 to-amber-600/40" />
+          {/* Dark teal green gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-teal-900/60 via-emerald-800/60 to-green-700/60" />
         </div>
 
         {/* Hero Content */}
@@ -58,7 +59,7 @@ export default function Home() {
           </p>
 
           {/* Glass Search Bar */}
-          <div className="mb-6 rounded-xl bg-white/20 backdrop-blur-lg border border-white/30 p-4 shadow-2xl">
+          <div className="mb-6 rounded-xl bg-white/15 backdrop-blur-lg border border-white/25 p-4 shadow-2xl">
             <div className="flex gap-3">
               <div className="flex-1">
                 <Input
@@ -66,7 +67,7 @@ export default function Home() {
                   className="bg-transparent border-white/40 text-white placeholder:text-white/70"
                 />
               </div>
-              <Button className="bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/30 text-white">
+              <Button className="bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/25 text-white">
                 Explore
               </Button>
             </div>
@@ -75,18 +76,19 @@ export default function Home() {
           {/* Category Chips */}
           <div className="mb-12 flex flex-wrap gap-3">
             {["Mountains", "Food", "Festivals", "Hotels"].map((category) => (
-              <span
+              <Link
                 key={category}
-                className="cursor-pointer rounded-full bg-white/20 px-4 py-2 text-sm font-medium text-white backdrop-blur-md border border-white/30 transition-all hover:bg-white/30"
+                href="/"
+                className="cursor-pointer rounded-full bg-white/15 px-4 py-2 text-sm font-medium text-white backdrop-blur-md border border-white/25 transition-all hover:bg-white/25"
               >
                 {category}
-              </span>
+              </Link>
             ))}
           </div>
 
           {/* Floating Glass Cards */}
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <Card className="overflow-hidden bg-white/20 backdrop-blur-md border border-white/30 shadow-2xl">
+            <Card className="overflow-hidden bg-white/15 backdrop-blur-md border border-white/25 shadow-2xl">
               <div className="aspect-video w-full overflow-hidden bg-muted">
                 <img
                   src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80"
@@ -102,7 +104,7 @@ export default function Home() {
               </CardContent>
             </Card>
 
-            <Card className="overflow-hidden bg-white/20 backdrop-blur-md border border-white/30 shadow-2xl">
+            <Card className="overflow-hidden bg-white/15 backdrop-blur-md border border-white/25 shadow-2xl">
               <div className="aspect-video w-full overflow-hidden bg-muted">
                 <img
                   src="https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=800&q=80"
@@ -122,45 +124,54 @@ export default function Home() {
       </section>
 
       {/* Destinations List Section */}
-      <section className="bg-white py-16">
+      <section className="bg-gradient-to-br from-teal-900 to-emerald-800 py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h2 className="mb-8 text-3xl font-semibold text-gray-900">
+          <h2 className="mb-8 text-3xl font-semibold text-white">
             Mountain & Hiking Destinations
           </h2>
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {destinations.map((destination) => (
-              <Card
+              <Link
                 key={destination.id}
-                className="overflow-hidden transition-shadow hover:shadow-lg"
+                href={`/destinations/${destination.id}`}
               >
-                <div className="aspect-video w-full overflow-hidden bg-muted">
-                  <img
-                    src={destination.photo_url}
-                    alt={destination.name}
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle className="line-clamp-1 text-lg">
-                    {destination.name}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="line-clamp-3 text-sm text-gray-600">
-                    {destination.description}
-                  </p>
-                </CardContent>
-              </Card>
+                <Card className="overflow-hidden bg-white/15 backdrop-blur-md border border-white/25 transition-all hover:scale-105 hover:shadow-2xl cursor-pointer h-full">
+                  <div className="aspect-video w-full overflow-hidden bg-muted">
+                    <img
+                      src={destination.photo_url}
+                      alt={destination.name}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="line-clamp-1 text-lg text-white">
+                      {destination.name}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <p className="line-clamp-2 text-sm text-white/90">
+                      {destination.description}
+                    </p>
+                    <div className="space-y-1">
+                      <p className="text-xs font-medium text-white/70">Address</p>
+                      <p className="text-xs text-white/90">{destination.address}</p>
+                    </div>
+                    <div className="inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-medium text-white capitalize">
+                      {destination.category}
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
       {/* Dock-style Navbar */}
-      <nav className="fixed top-6 left-1/2 z-50 -translate-x-1/2 rounded-2xl bg-white/20 backdrop-blur-xl border border-white/30 px-6 py-3 shadow-2xl">
+      <nav className="fixed top-6 left-1/2 z-50 -translate-x-1/2 rounded-2xl bg-white/15 backdrop-blur-xl border border-white/25 px-6 py-3 shadow-2xl">
         <div className="flex items-center gap-6">
           <div className="text-lg font-bold text-white">Lakat Iloilo</div>
-          <div className="h-6 w-px bg-white/30" />
+          <div className="h-6 w-px bg-white/25" />
           <div className="flex gap-4 text-sm font-medium text-white/90">
             <span className="cursor-pointer hover:text-white">Explore</span>
             <span className="cursor-pointer hover:text-white">Categories</span>
@@ -173,7 +184,7 @@ export default function Home() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-24 right-6 z-50 rounded-full bg-white/20 backdrop-blur-xl border border-white/30 p-3 text-white shadow-2xl transition-all hover:bg-white/30"
+          className="fixed bottom-24 right-6 z-50 rounded-full bg-white/15 backdrop-blur-xl border border-white/25 p-3 text-white shadow-2xl transition-all hover:bg-white/25"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -191,7 +202,7 @@ export default function Home() {
         </button>
       )}
 
-      <footer className="border-t border-gray-200 bg-gray-50 py-8 text-center text-sm text-gray-500">
+      <footer className="border-t border-white/20 bg-teal-900 py-8 text-center text-sm text-white/70">
         One user. One job. Demoable in three minutes.
       </footer>
     </main>

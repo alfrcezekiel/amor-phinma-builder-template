@@ -4,12 +4,12 @@
 
 **Blocked by:** 01
 
-**Status:** todo
+**Status:** done
 
-- [ ] Supabase project created and environment variables set in .env.local
-- [ ] Environment variables added to Vercel project settings
-- [ ] destinations table created in Supabase with all columns from spec
-- [ ] Row Level Security enabled on destinations table
-- [ ] RLS policy written: anyone may read, no one may write through the app
-- [ ] Live site successfully queries the destinations table
-- [ ] Works on the live URL
+- [x] Supabase project created and environment variables set in .env.local
+- [x] Environment variables added to Vercel project settings
+- [x] destinations table created in Supabase with all columns from spec
+- [x] Row Level Security enabled on destinations table
+- [x] RLS policy written: anyone may read, no one may write through the app
+- [x] Live site successfully queries the destinations table
+- [x] Works on the live URL
