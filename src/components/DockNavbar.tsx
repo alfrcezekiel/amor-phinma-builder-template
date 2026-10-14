@@ -1,15 +1,87 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+
 export function DockNavbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const scrollToSection = (sectionId: string) => {
+    setIsOpen(false);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const navLinks = [
+    { id: "explore", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "features", label: "Features" },
+    { id: "categories", label: "Explore" },
+  ];
+
   return (
-    <nav className="fixed top-6 left-1/2 z-50 -translate-x-1/2 rounded-2xl bg-white/15 backdrop-blur-xl border border-white/25 px-6 py-3 shadow-2xl w-auto min-w-[300px] md:min-w-[400px]">
-      <div className="flex items-center gap-6">
-        <div className="text-base font-bold text-white">Lakat Iloilo</div>
-        <div className="h-6 w-px bg-white/25" />
-        <div className="flex gap-4 text-sm font-medium text-white/90">
-          <span className="cursor-pointer hover:text-white">Explore</span>
-          <span className="cursor-pointer hover:text-white">Categories</span>
-          <span className="cursor-pointer hover:text-white">Features</span>
+    <>
+      {isOpen && (
+        <>
+          <div
+            onClick={() => setIsOpen(false)}
+            className="fixed inset-0 bg-black/50 backdrop-blur-md z-40 sm:hidden"
+          />
+          <div className="fixed inset-0 z-50 sm:hidden">
+            <div className="h-full bg-teal-900/95 backdrop-blur-xl p-6 flex flex-col">
+              <div className="flex items-center justify-between mb-8">
+                <span className="text-2xl font-bold text-white">Lakat Iloilo</span>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="text-white hover:text-white/80 transition-colors text-2xl"
+                >
+                  ✕
+                </button>
+              </div>
+              <div className="flex flex-col gap-4 text-lg font-medium text-white">
+                {navLinks.map((link) => (
+                  <span
+                    key={link.id}
+                    onClick={() => scrollToSection(link.id)}
+                    className="cursor-pointer hover:text-white/80 py-3 transition-colors duration-200 border-b border-white/10 last:border-0"
+                  >
+                    {link.label}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+
+      <nav className={`fixed top-4 left-1/2 z-50 -translate-x-1/2 rounded-2xl px-4 py-2 sm:px-8 sm:py-3 shadow-2xl bg-teal-900/95 backdrop-blur-xl border border-white/25 w-[calc(100%-2rem)] sm:w-auto sm:min-w-96 md:min-w-[28rem] ${isOpen ? 'hidden sm:flex' : 'flex'}`}>
+        <div className="flex items-center justify-between w-full">
+          <Link href="/" className="text-sm font-bold text-white sm:text-base hover:text-white/80 transition-colors">
+            Lakat Iloilo
+          </Link>
+          <div className="flex items-center gap-2 sm:gap-4 text-xs font-medium text-white/90 sm:text-sm">
+            {navLinks.map((link) => (
+              <span
+                key={link.id}
+                onClick={() => scrollToSection(link.id)}
+                className="cursor-pointer hover:text-white hidden sm:inline transition-colors duration-200"
+              >
+                {link.label}
+              </span>
+            ))}
+          </div>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="sm:hidden flex flex-col gap-1.5 p-2 cursor-pointer group"
+          >
+            <span className={`block w-5 h-0.5 bg-white transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`}></span>
+            <span className={`block w-5 h-0.5 bg-white transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
+            <span className={`block w-5 h-0.5 bg-white transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
+          </button>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 }

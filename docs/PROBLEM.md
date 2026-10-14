@@ -4,24 +4,27 @@
 John — a traveler who plans weekend trips around Iloilo Province every week.
 
 ## The struggle
-John struggles to find mountain/hiking spots because information is scattered across Facebook, Google, and random websites with no way to filter by category. He often misses great spots and only discovers them when friends mention them later.
+John struggles to find both mountain/hiking spots and places to stay because information is scattered across Facebook, Google, and random websites with no way to filter by category. He often misses great spots and only discovers them when friends mention them later. He also spends hours searching for hotels and condominiums, comparing prices and availability across multiple sites.
 
 ## Today's workaround
-John searches Google, scrolls through Facebook timelines, and asks friends for recommendations.
+John searches Google for destinations, scrolls through Facebook timelines, and asks friends for recommendations. For accommodations, he checks multiple hotel websites, Facebook pages, and booking platforms, spending 1-3 hours total.
 
 ## The MVP
-A centralized web platform where users can browse and discover mountain/hiking spots in Iloilo Province with name, location (address + coordinates), photo, and short description.
+A centralized web platform where users can browse and discover mountain/hiking spots AND hotels/condominiums in Iloilo Province with name, location (address + coordinates), photo, and short description.
 
 ## How we'll know it worked
-Demo showing a list of 5-10 mountain spots in Iloilo, with the ability to click a spot and see details. Elizabeth and Mark will test the app before Session 3.
+Demo showing a list of 5-10 mountain spots and 5-10 accommodations in Iloilo, with the ability to click each and see details. Elizabeth and Mark will test the app before Session 3.
 
 ## Out of scope
-- Hotels & accommodations
-- Nature & parks
-- Walking areas
-- User accounts/login
-- Reviews and ratings
-- Booking/payments
+- Nature & parks destinations
+- Walking areas destinations
+- User accounts and login system
+- Reviews and ratings for destinations
+- Booking/payments for any services
+- Map integration
+- Search and filter functionality
+- Admin UI for managing data
 
 ## Glossary
-- **Centralized platform**: A single website where all Iloilo tourism destinations are listed in one place, instead of scattered across Facebook, Google, and individual websites.
+- **Centralized platform**: A single website where all Iloilo tourism destinations and accommodations are listed in one place, instead of scattered across Facebook, Google, and individual websites.
+- **Accommodations**: Hotels and condominiums where travelers can stay during their trip.

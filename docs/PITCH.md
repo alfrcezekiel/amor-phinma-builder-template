@@ -4,23 +4,23 @@
 
 **The person**
 
-Last weekend I watched my friend John try to plan a hiking trip. He sat with his laptop, searching Google for mountain spots in Iloilo, then scrolling through Facebook pages, then asking friends in a group chat. After an hour he picked somewhere familiar. Later he found out about a great waterfall he missed entirely. This happens every weekend.
+Last weekend I watched my friend John try to plan a hiking trip. He sat with his laptop, searching Google for mountain spots in Iloilo, then scrolling through Facebook pages, then asking friends in a group chat. After an hour he picked somewhere familiar. Later he found out about a great waterfall he missed entirely. Then he spent another two hours searching for hotels, comparing prices across different websites. This happens every weekend.
 
 **Today**
 
-Right now John's workaround is a mess. He jumps between Google, Facebook, and random websites. Information is everywhere and nowhere. He misses great spots because there's no single place to see what's available. It costs him time and worse — it costs him experiences he never even knew about.
+Right now John's workaround is a mess. He jumps between Google, Facebook, and random websites for destinations. Then he starts over for accommodations, checking hotel sites, Facebook pages, and booking platforms. Information is everywhere and nowhere. He misses great spots and good deals because there's no single place to see what's available. It costs him 1-3 hours every time he plans a trip.
 
 **Our fix**
 
-We're building a centralized web platform for mountain and hiking spots in Iloilo Province. One website where John can see all the spots in one place — name, location, photo, and a short description. He opens the site, browses the list, clicks a spot to see details, and decides where to go. No more scattered searches.
+We're building a centralized web platform for mountain/hiking spots AND hotels/condominiums in Iloilo Province. Iloilo is special — it's the Heart of the Philippines, known for its Spanish colonial churches, the Dinagyang Festival, and genuine hospitality. One website where John can see all the spots and all the places to stay in one place — name, location, photo, and a short description. He opens the site, browses the destinations list, clicks a spot to see details, then browses accommodations to find where to stay. No more scattered searches.
 
 **The demo moment**
 
-In Session 3 we'll show you a live website with five to ten mountain spots from Iloilo. You'll see the list, click on a spot, and view the details. It will work in the browser, no login required.
+In Session 3 we'll show you a live website with five to ten mountain spots and five to ten accommodations from Iloilo. You'll see both lists, click on items, and view the details. It will work in the browser, no login required.
 
 **How we'll know**
 
-We'll have Elizabeth and Mark test the app before the final demo. They'll tell us if it actually helps them discover spots they didn't know about. If they find it useful, we've succeeded.
+We'll have Elizabeth and Mark test the app before the final demo. They'll tell us if it actually helps them discover spots and accommodations they didn't know about. If they find it useful, we've succeeded.
 
 ---
 
@@ -30,9 +30,9 @@ We'll have Elizabeth and Mark test the app before the final demo. They'll tell u
 
 We based this on watching John struggle, but we admit our observation wasn't as detailed as it should have been. We're going to watch him plan another trip this weekend and take notes on exactly what he searches, how long it takes, and what he misses. We'll bring that data to Session 2.
 
-**Q2: Why mountains only? What about everything else?**
+**Q2: Why not add everything at once?**
 
-Mountains are just the start. We picked one category to build something that actually works by Session 3 instead of trying to do everything and shipping nothing. Hotels, parks, and walking areas are in our LATER list — we'll add them after the MVP works.
+We picked destinations (mountains/hiking) and accommodations (hotels/condominiums) as the two core needs. Nature parks, walking areas, and other categories are in our LATER list — we'll add them after the MVP works. Trying to do everything at once risks shipping nothing.
 
 **Q3: Why can't a Google Sheet or Facebook page solve this?**
 

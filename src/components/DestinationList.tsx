@@ -16,7 +16,7 @@ interface DestinationListProps {
 
 export function DestinationList({ destinations }: DestinationListProps) {
   return (
-    <section className="bg-gradient-to-br from-teal-900 to-emerald-800 py-16">
+    <section className="bg-linear-to-br from-teal-900 to-emerald-800 py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="mb-8 text-3xl font-semibold text-white">
           Mountain & Hiking Destinations

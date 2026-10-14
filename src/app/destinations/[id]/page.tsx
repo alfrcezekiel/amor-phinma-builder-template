@@ -19,7 +19,7 @@ export default async function DestinationDetailPage({
 
   if (error || !destination) {
     return (
-      <main className="min-h-screen bg-gradient-to-br from-teal-900 to-emerald-800">
+      <main className="min-h-screen bg-linear-to-br from-teal-900 to-emerald-800">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
           <h1 className="text-2xl font-semibold text-white">
             Destination not found
@@ -40,7 +40,7 @@ export default async function DestinationDetailPage({
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-teal-900 to-emerald-800">
+    <main className="min-h-screen bg-linear-to-br from-teal-900 to-emerald-800">
       {/* Full-width Cover Photo */}
       <div className="relative h-[60vh] w-full">
         <img
@@ -48,7 +48,7 @@ export default async function DestinationDetailPage({
           alt={destination.name}
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-teal-900/80 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-teal-900/80 to-transparent" />
 
         {/* Overlay Controls */}
         <div className="absolute top-6 left-6 right-6 flex items-center justify-between">
