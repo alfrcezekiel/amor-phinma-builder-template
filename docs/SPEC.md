@@ -78,10 +78,10 @@ No login required. The MVP works as a read-only browsing platform.
 - [x] Discover Iloilo with Ease section displays what the platform can do (browse destinations, find accommodations, mobile friendly, detailed information, no login required, centralized information)
 - [x] Navigation bar with Home, About, Features, and Explore links that scroll to sections
 - [x] Responsive navigation with burger menu and backdrop blur for mobile screens
-- [ ] "What do you want to explore?" section with category cards (Mountains & Hiking Spots, Foods & Dine-ins, Walking Areas, Festivals, Nature & Parks, Heritage Sites)
-- [ ] Glass segmented filter for location (All, Iloilo City, Iloilo Province)
-- [ ] Each category card shows photo, emoji, category name, and place count
-- [ ] App is live on Vercel and loads on mobile
+- [x] "What do you want to explore?" section with category cards (Mountains & Hiking Spots, Foods & Dine-ins, Walking Areas, Festivals, Nature & Parks, Heritage Sites)
+- [x] Glass segmented filter for location (All, Iloilo City, Iloilo Province)
+- [x] Each category card shows photo, emoji, category name, and place count
+- [x] App is live on Vercel and loads on mobile
 - [x] Database has RLS enabled with correct policies
 - [ ] Elizabeth and Mark have tested the app
 

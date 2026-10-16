@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export function CategoryChips() {
-  const categories = ["Mountains", "Food", "Festivals", "Hotels"];
+  const categories = ["Mountains", "Food", "Festivals", "Hotels", "Condominiums", "Walking Areas", "Nature & Parks"];
 
   return (
     <div className="mb-12 flex flex-wrap gap-3">

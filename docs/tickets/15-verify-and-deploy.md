@@ -4,15 +4,15 @@
 
 **Blocked by:** 14
 
-**Status:** todo
+**Status:** done
 
-- [ ] Test the complete categories section on the live URL
-- [ ] Verify all six category cards display correctly
-- [ ] Verify the location filter works on desktop
-- [ ] Verify the location filter works on mobile
-- [ ] Verify the responsive layout (3x2 on desktop, 2x3 on mobile)
-- [ ] Verify the glass effect styling displays correctly
-- [ ] Update README.md with the live URL if not already present
-- [ ] Commit and push changes to main
-- [ ] Verify deployment succeeds on Vercel
-- [ ] Works on the live URL
+- [x] Test the complete categories section on the live URL
+- [x] Verify all six category cards display correctly
+- [x] Verify the location filter works on desktop
+- [x] Verify the location filter works on mobile
+- [x] Verify the responsive layout (3x2 on desktop, 2x3 on mobile)
+- [x] Verify the glass effect styling displays correctly
+- [x] Update README.md with the live URL if not already present
+- [x] Commit and push changes to main
+- [x] Verify deployment succeeds on Vercel
+- [x] Works on the live URL
