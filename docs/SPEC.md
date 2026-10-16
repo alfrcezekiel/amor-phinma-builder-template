@@ -70,7 +70,7 @@ No login required. The MVP works as a read-only browsing platform.
 - [x] All category sections are visible by default
 - [x] App is live on Vercel and loads on mobile
 - [x] Database has RLS enabled with correct policies
-- [ ] Lakat Iloilo footer with branding, copyright, and navigation links
+- [x] Lakat Iloilo footer with branding, copyright, and navigation links
 - [ ] Elizabeth and Mark have tested the app
 
 ## Out of scope
