@@ -12,16 +12,15 @@ interface Destination {
 
 interface FestivalListProps {
   destinations: Destination[];
-  visible?: boolean;
   id?: string;
 }
 
-export function FestivalList({ destinations, visible = false, id }: FestivalListProps) {
+export function FestivalList({ destinations, id }: FestivalListProps) {
   const festivalDestinations = destinations
     .filter((dest) => dest.category === "festival")
     .slice(0, 6);
 
-  if (!visible || festivalDestinations.length === 0) return null;
+  if (festivalDestinations.length === 0) return null;
 
   return (
     <section id={id} className="py-16">

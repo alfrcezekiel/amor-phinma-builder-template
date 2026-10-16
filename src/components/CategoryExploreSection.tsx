@@ -83,7 +83,7 @@ export function CategoryExploreSection({ onCategorySelect }: CategoryExploreSect
   }, [supabase, selectedLocation]);
 
   return (
-    <section className="py-16 bg-gradient-to-br from-teal-900 to-emerald-800">
+    <section className="py-16 bg-linear-to-br from-teal-900 to-emerald-800">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-white mb-4 font-fraunces">

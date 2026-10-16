@@ -12,16 +12,15 @@ interface Destination {
 
 interface FoodListProps {
   destinations: Destination[];
-  visible?: boolean;
   id?: string;
 }
 
-export function FoodList({ destinations, visible = false, id }: FoodListProps) {
+export function FoodList({ destinations, id }: FoodListProps) {
   const foodDestinations = destinations
     .filter((dest) => dest.category === "food")
     .slice(0, 6);
 
-  if (!visible || foodDestinations.length === 0) return null;
+  if (foodDestinations.length === 0) return null;
 
   return (
     <section id={id} className="py-16">

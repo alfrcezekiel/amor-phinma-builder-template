@@ -12,16 +12,15 @@ interface Destination {
 
 interface NatureListProps {
   destinations: Destination[];
-  visible?: boolean;
   id?: string;
 }
 
-export function NatureList({ destinations, visible = false, id }: NatureListProps) {
+export function NatureList({ destinations, id }: NatureListProps) {
   const natureDestinations = destinations
     .filter((dest) => dest.category === "nature")
     .slice(0, 6);
 
-  if (!visible || natureDestinations.length === 0) return null;
+  if (natureDestinations.length === 0) return null;
 
   return (
     <section id={id} className="py-16">

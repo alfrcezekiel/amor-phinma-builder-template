@@ -12,16 +12,15 @@ interface Destination {
 
 interface MountainListProps {
   destinations: Destination[];
-  visible?: boolean;
   id?: string;
 }
 
-export function MountainList({ destinations, visible = false, id }: MountainListProps) {
+export function MountainList({ destinations, id }: MountainListProps) {
   const mountainDestinations = destinations
     .filter((dest) => dest.category === "mountain")
     .slice(0, 6);
 
-  if (!visible || mountainDestinations.length === 0) return null;
+  if (mountainDestinations.length === 0) return null;
 
   return (
     <section id={id} className="py-16">

@@ -12,16 +12,15 @@ interface Destination {
 
 interface WalkingListProps {
   destinations: Destination[];
-  visible?: boolean;
   id?: string;
 }
 
-export function WalkingList({ destinations, visible = false, id }: WalkingListProps) {
+export function WalkingList({ destinations, id }: WalkingListProps) {
   const walkingDestinations = destinations
     .filter((dest) => dest.category === "walking")
     .slice(0, 6);
 
-  if (!visible || walkingDestinations.length === 0) return null;
+  if (walkingDestinations.length === 0) return null;
 
   return (
     <section id={id} className="py-16">

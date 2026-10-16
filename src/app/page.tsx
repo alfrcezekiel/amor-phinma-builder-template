@@ -78,32 +78,26 @@ export default function Home() {
       <section className="bg-linear-to-br from-teal-900 to-emerald-800">
         <MountainList
           destinations={destinations}
-          visible={true}
           id="mountain-list"
         />
         <FoodList
           destinations={destinations}
-          visible={true}
           id="food-list"
         />
         <WalkingList
           destinations={destinations}
-          visible={true}
           id="walking-list"
         />
         <FestivalList
           destinations={destinations}
-          visible={true}
           id="festival-list"
         />
         <NatureList
           destinations={destinations}
-          visible={true}
           id="nature-list"
         />
         <HeritageList
           destinations={destinations}
-          visible={true}
           id="heritage-list"
         />
 

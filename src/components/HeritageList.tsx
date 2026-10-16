@@ -12,16 +12,15 @@ interface Destination {
 
 interface HeritageListProps {
   destinations: Destination[];
-  visible?: boolean;
   id?: string;
 }
 
-export function HeritageList({ destinations, visible = false, id }: HeritageListProps) {
+export function HeritageList({ destinations, id }: HeritageListProps) {
   const heritageDestinations = destinations
     .filter((dest) => dest.category === "heritage")
     .slice(0, 6);
 
-  if (!visible || heritageDestinations.length === 0) return null;
+  if (heritageDestinations.length === 0) return null;
 
   return (
     <section id={id} className="py-16">
