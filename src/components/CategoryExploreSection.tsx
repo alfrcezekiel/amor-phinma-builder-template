@@ -21,8 +21,15 @@ const categoryImages = {
   heritage: "https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=800&q=80",
 };
 
+const locationFilters = [
+  { id: "all", label: "All" },
+  { id: "iloilo_city", label: "Iloilo City" },
+  { id: "iloilo_province", label: "Iloilo Province" },
+];
+
 export function CategoryExploreSection() {
   const [categoryCounts, setCategoryCounts] = useState<Record<string, number>>({});
+  const [selectedLocation, setSelectedLocation] = useState("all");
   const supabase = createBrowserClient();
 
   useEffect(() => {
@@ -53,6 +60,24 @@ export function CategoryExploreSection() {
           <p className="text-lg text-white/90 max-w-2xl mx-auto font-inter">
             Discover diverse destinations across Iloilo—from mountains and food spots to festivals and heritage sites.
           </p>
+        </div>
+
+        <div className="flex justify-center mb-8">
+          <div className="inline-flex bg-white/10 backdrop-blur-md border border-white/20 rounded-full p-1">
+            {locationFilters.map((filter) => (
+              <button
+                key={filter.id}
+                onClick={() => setSelectedLocation(filter.id)}
+                className={`px-6 py-2 rounded-full text-sm font-medium transition-all ${
+                  selectedLocation === filter.id
+                    ? "bg-white text-teal-900"
+                    : "text-white hover:bg-white/10"
+                }`}
+              >
+                {filter.label}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
