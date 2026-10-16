@@ -4,11 +4,11 @@
 
 **Blocked by:** None
 
-**Status:** todo
+**Status:** done
 
-- [ ] Footer displays Lakat Iloilo branding with platform name
-- [ ] Footer shows copyright information
-- [ ] Footer includes navigation links (Home, About, Features, Explore) that scroll to sections
-- [ ] Footer background uses teal/emerald gradient to match overall theme
-- [ ] Footer is responsive on mobile devices
+- [x] Footer displays Lakat Iloilo branding with platform name
+- [x] Footer shows copyright information
+- [x] Footer includes navigation links (Home, About, Features, Explore) that scroll to sections
+- [x] Footer background uses teal/emerald gradient to match overall theme
+- [x] Footer is responsive on mobile devices
 - [ ] Works on the live URL

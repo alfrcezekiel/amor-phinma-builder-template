@@ -21,7 +21,7 @@ Travelers planning weekend trips around Iloilo Province.
 1. Home page — shows welcome text, navigation bar, About Iloilo section, Features section, category cards (mountains, food, walking, festivals, nature, heritage, hotels, condominiums) with location filter (All/Iloilo City/Iloilo Province), separate list sections for each destination category, and accommodations list. Clicking a category card scrolls to that category's section; all sections are always visible.
 2. Destination detail page — shows destination name, address, coordinates, photo, and description.
 3. Accommodation detail page — shows accommodation name, address, phone, email, photo, and description.
-4. Footer — shows Lakat Iloilo branding with platform name, copyright information, navigation links (Home, About, Features, Explore), and social media links (optional). Background uses teal/emerald gradient to match the overall theme.
+4. Footer — shows Lakat Iloilo branding with platform name, copyright information, navigation links (Home, About, Features, Explore), and legal section. Background uses teal/emerald gradient to match the overall theme.
 
 ## Data
 **destinations** table:

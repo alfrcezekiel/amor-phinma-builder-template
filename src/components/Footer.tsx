@@ -9,7 +9,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="border-t border-white/20 bg-gradient-to-br from-teal-900 to-emerald-800 py-12">
+    <footer className="border-t border-white/20 bg-linear-to-br from-teal-900 to-emerald-800 py-12">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Branding */}
