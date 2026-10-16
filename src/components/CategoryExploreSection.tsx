@@ -47,10 +47,10 @@ export function CategoryExploreSection() {
     <section className="py-16 bg-gradient-to-br from-teal-900 to-emerald-800">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-fraunces)' }}>
+          <h2 className="text-4xl font-bold text-white mb-4 font-fraunces">
             What do you want to explore?
           </h2>
-          <p className="text-lg text-white/90 max-w-2xl mx-auto" style={{ fontFamily: 'var(--font-inter)' }}>
+          <p className="text-lg text-white/90 max-w-2xl mx-auto font-inter">
             Discover diverse destinations across Iloilo—from mountains and food spots to festivals and heritage sites.
           </p>
         </div>
