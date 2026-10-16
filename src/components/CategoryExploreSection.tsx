@@ -34,9 +34,13 @@ export function CategoryExploreSection() {
 
   useEffect(() => {
     const fetchCategoryCounts = async () => {
-      const { data } = await supabase
-        .from("destinations")
-        .select("category");
+      let query = supabase.from("destinations").select("category, location");
+
+      if (selectedLocation !== "all") {
+        query = query.eq("location", selectedLocation);
+      }
+
+      const { data } = await query;
 
       if (data) {
         const counts: Record<string, number> = {};
@@ -48,7 +52,7 @@ export function CategoryExploreSection() {
     };
 
     fetchCategoryCounts();
-  }, [supabase]);
+  }, [supabase, selectedLocation]);
 
   return (
     <section className="py-16 bg-gradient-to-br from-teal-900 to-emerald-800">
