@@ -13,18 +13,9 @@ interface Destination {
 interface CategoryListProps {
   destinations: Destination[];
   category: string;
-  title?: string;
+  title: string;
   id?: string;
 }
-
-const categoryDisplayNames: Record<string, string> = {
-  mountain: "Mountains & Hiking Spots",
-  food: "Foods & Dine-ins",
-  walking: "Walking Areas",
-  festival: "Festivals",
-  nature: "Nature & Parks",
-  heritage: "Heritage Sites",
-};
 
 export function CategoryList({ destinations, category, title, id }: CategoryListProps) {
   const filteredDestinations = destinations
@@ -33,13 +24,11 @@ export function CategoryList({ destinations, category, title, id }: CategoryList
 
   if (filteredDestinations.length === 0) return null;
 
-  const displayTitle = title || categoryDisplayNames[category] || category;
-
   return (
     <section id={id} className="py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="mb-8 text-3xl font-semibold text-white">
-          {displayTitle}
+          {title}
         </h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {filteredDestinations.map((destination) => (

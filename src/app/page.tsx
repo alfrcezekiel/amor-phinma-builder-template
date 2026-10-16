@@ -67,31 +67,37 @@ export default function Home() {
         <CategoryList
           destinations={destinations}
           category="mountain"
+          title="Mountains & Hiking Spots"
           id="mountain-list"
         />
         <CategoryList
           destinations={destinations}
           category="food"
+          title="Foods & Dine-ins"
           id="food-list"
         />
         <CategoryList
           destinations={destinations}
           category="walking"
+          title="Walking Areas"
           id="walking-list"
         />
         <CategoryList
           destinations={destinations}
           category="festival"
+          title="Festivals"
           id="festival-list"
         />
         <CategoryList
           destinations={destinations}
           category="nature"
+          title="Nature & Parks"
           id="nature-list"
         />
         <CategoryList
           destinations={destinations}
           category="heritage"
+          title="Heritage Sites"
           id="heritage-list"
         />
 
