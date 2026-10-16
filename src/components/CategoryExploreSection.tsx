@@ -10,6 +10,8 @@ const categories = [
   { id: "festival", name: "Festivals", emoji: "🎉" },
   { id: "nature", name: "Nature & Parks", emoji: "🌳" },
   { id: "heritage", name: "Heritage Sites", emoji: "🏛️" },
+  { id: "hotel", name: "Hotels", emoji: "🏨" },
+  { id: "condominium", name: "Condominiums", emoji: "🏢" },
 ];
 
 const categoryImages = {
@@ -19,6 +21,8 @@ const categoryImages = {
   festival: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80",
   nature: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
   heritage: "https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=800&q=80",
+  hotel: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80",
+  condominium: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
 };
 
 const locationFilters = [
@@ -27,28 +31,52 @@ const locationFilters = [
   { id: "iloilo_province", label: "Iloilo Province" },
 ];
 
-export function CategoryExploreSection() {
+interface CategoryExploreSectionProps {
+  onCategorySelect?: (sectionId: string) => void;
+}
+
+export function CategoryExploreSection({ onCategorySelect }: CategoryExploreSectionProps) {
   const [categoryCounts, setCategoryCounts] = useState<Record<string, number>>({});
   const [selectedLocation, setSelectedLocation] = useState("all");
   const supabase = createBrowserClient();
 
+  const categorySectionIds: Record<string, string> = {
+    mountain: "mountain-list",
+    food: "food-list",
+    walking: "walking-list",
+    festival: "festival-list",
+    nature: "nature-list",
+    heritage: "heritage-list",
+    hotel: "accommodation-list",
+    condominium: "accommodation-list",
+  };
+
   useEffect(() => {
     const fetchCategoryCounts = async () => {
-      let query = supabase.from("destinations").select("category, location");
+      const counts: Record<string, number> = {};
 
+      // Fetch destination categories
+      let destQuery = supabase.from("destinations").select("category, location");
       if (selectedLocation !== "all") {
-        query = query.eq("location", selectedLocation);
+        destQuery = destQuery.eq("location", selectedLocation);
       }
+      const { data: destData } = await destQuery;
 
-      const { data } = await query;
-
-      if (data) {
-        const counts: Record<string, number> = {};
-        data.forEach((dest) => {
+      if (destData) {
+        destData.forEach((dest) => {
           counts[dest.category] = (counts[dest.category] || 0) + 1;
         });
-        setCategoryCounts(counts);
       }
+
+      // Fetch accommodation types
+      const { data: accData } = await supabase.from("accommodations").select("type");
+      if (accData) {
+        accData.forEach((acc) => {
+          counts[acc.type] = (counts[acc.type] || 0) + 1;
+        });
+      }
+
+      setCategoryCounts(counts);
     };
 
     fetchCategoryCounts();
@@ -84,15 +112,21 @@ export function CategoryExploreSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {categories.map((category) => {
             const count = categoryCounts[category.id] || 0;
             const imageUrl = categoryImages[category.id as keyof typeof categoryImages];
+            const sectionId = categorySectionIds[category.id];
 
             return (
               <div
                 key={category.id}
                 className="relative group overflow-hidden rounded-2xl h-48 cursor-pointer"
+                onClick={() => {
+                  if (sectionId) {
+                    onCategorySelect?.(sectionId);
+                  }
+                }}
               >
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"

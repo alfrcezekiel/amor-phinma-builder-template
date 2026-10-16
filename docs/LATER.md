@@ -14,15 +14,12 @@ stays small enough to actually ship by Session 3.
 - Display the real reviews on destinations and hotel/condominiums
 
 ### Additional destination categories
-- Nature & parks destinations
-- Walking areas destinations
-- Restaurants and food spots
 - Cultural sites and museums
 
 ### Other features
 - Booking/payments for accommodations
 - Map integration with directions
-- Search and filter functionality
+- Text search functionality
 - Admin UI for managing destinations and accommodations
 - Price range display for accommodations
 - Room type information for accommodations

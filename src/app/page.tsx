@@ -9,8 +9,14 @@ import { FeaturedCards } from "@/components/FeaturedCards";
 import { AboutIloilo } from "@/components/AboutIloilo";
 import { FeaturesSection } from "@/components/FeaturesSection";
 import { CategoryExploreSection } from "@/components/CategoryExploreSection";
-import { DestinationList } from "@/components/DestinationList";
+import { MountainList } from "@/components/MountainList";
+import { FoodList } from "@/components/FoodList";
+import { WalkingList } from "@/components/WalkingList";
+import { FestivalList } from "@/components/FestivalList";
+import { NatureList } from "@/components/NatureList";
+import { HeritageList } from "@/components/HeritageList";
 import { AccommodationList } from "@/components/AccommodationList";
+import { Footer } from "@/components/Footer";
 import { DockNavbar } from "@/components/DockNavbar";
 import { ScrollToTop } from "@/components/ScrollToTop";
 
@@ -38,6 +44,13 @@ export default function Home() {
     fetchAccommodations();
   }, [supabase]);
 
+  const handleCategorySelect = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <main className="min-h-screen">
       <section id="explore" className="min-h-screen">
@@ -59,19 +72,50 @@ export default function Home() {
         <div id="features">
           <FeaturesSection />
         </div>
-        <CategoryExploreSection />
+        <CategoryExploreSection onCategorySelect={handleCategorySelect} />
       </section>
 
-      <DestinationList destinations={destinations} />
+      <section className="bg-linear-to-br from-teal-900 to-emerald-800">
+        <MountainList
+          destinations={destinations}
+          visible={true}
+          id="mountain-list"
+        />
+        <FoodList
+          destinations={destinations}
+          visible={true}
+          id="food-list"
+        />
+        <WalkingList
+          destinations={destinations}
+          visible={true}
+          id="walking-list"
+        />
+        <FestivalList
+          destinations={destinations}
+          visible={true}
+          id="festival-list"
+        />
+        <NatureList
+          destinations={destinations}
+          visible={true}
+          id="nature-list"
+        />
+        <HeritageList
+          destinations={destinations}
+          visible={true}
+          id="heritage-list"
+        />
 
-      <AccommodationList accommodations={accommodations} />
+        <div id="accommodation-list">
+          <AccommodationList accommodations={accommodations} />
+        </div>
+      </section>
 
       <DockNavbar />
       <ScrollToTop />
 
-      <footer className="border-t border-white/20 bg-teal-900 py-8 text-center text-sm text-white/70">
-        One user. One job. Demoable in three minutes.
-      </footer>
+      <Footer />
     </main>
   );
 }

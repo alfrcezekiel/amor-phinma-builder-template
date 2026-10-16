@@ -16,7 +16,7 @@ interface AccommodationListProps {
 
 export function AccommodationList({ accommodations }: AccommodationListProps) {
   return (
-    <section className="bg-linear-to-br from-blue-900 to-indigo-800 py-16">
+    <section className="py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="mb-8 text-3xl font-semibold text-white">
           Hotels & Condominiums

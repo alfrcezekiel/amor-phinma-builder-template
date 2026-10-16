@@ -10,19 +10,17 @@ John struggles to find both mountain/hiking spots and places to stay because inf
 John searches Google for destinations, scrolls through Facebook timelines, and asks friends for recommendations. For accommodations, he checks multiple hotel websites, Facebook pages, and booking platforms, spending 1-3 hours total.
 
 ## The MVP
-A centralized web platform where users can browse and discover mountain/hiking spots AND hotels/condominiums in Iloilo Province with name, location (address + coordinates), photo, and short description.
+A centralized web platform where users can browse and discover diverse destinations (mountains, foods & dine-ins, walking areas, festivals, nature & parks, heritage sites) AND hotels/condominiums in Iloilo Province with name, location (address + coordinates), photo, and short description. Users can filter destinations by clicking category cards to see only that type of destination.
 
 ## How we'll know it worked
 Demo showing a list of 5-10 mountain spots and 5-10 accommodations in Iloilo, with the ability to click each and see details. Elizabeth and Mark will test the app before Session 3.
 
 ## Out of scope
-- Nature & parks destinations
-- Walking areas destinations
 - User accounts and login system
 - Reviews and ratings for destinations
 - Booking/payments for any services
 - Map integration
-- Search and filter functionality
+- Text search functionality
 - Admin UI for managing data
 
 ## Glossary
