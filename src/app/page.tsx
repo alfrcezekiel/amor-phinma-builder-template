@@ -9,12 +9,7 @@ import { FeaturedCards } from "@/components/FeaturedCards";
 import { AboutIloilo } from "@/components/AboutIloilo";
 import { FeaturesSection } from "@/components/FeaturesSection";
 import { CategoryExploreSection } from "@/components/CategoryExploreSection";
-import { MountainList } from "@/components/MountainList";
-import { FoodList } from "@/components/FoodList";
-import { WalkingList } from "@/components/WalkingList";
-import { FestivalList } from "@/components/FestivalList";
-import { NatureList } from "@/components/NatureList";
-import { HeritageList } from "@/components/HeritageList";
+import { CategoryList } from "@/components/CategoryList";
 import { AccommodationList } from "@/components/AccommodationList";
 import { Footer } from "@/components/Footer";
 import { DockNavbar } from "@/components/DockNavbar";
@@ -44,13 +39,6 @@ export default function Home() {
     fetchAccommodations();
   }, [supabase]);
 
-  const handleCategorySelect = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <main className="min-h-screen">
       <section id="explore" className="min-h-screen">
@@ -72,32 +60,38 @@ export default function Home() {
         <div id="features">
           <FeaturesSection />
         </div>
-        <CategoryExploreSection onCategorySelect={handleCategorySelect} />
+        <CategoryExploreSection />
       </section>
 
       <section className="bg-linear-to-br from-teal-900 to-emerald-800">
-        <MountainList
+        <CategoryList
           destinations={destinations}
+          category="mountain"
           id="mountain-list"
         />
-        <FoodList
+        <CategoryList
           destinations={destinations}
+          category="food"
           id="food-list"
         />
-        <WalkingList
+        <CategoryList
           destinations={destinations}
+          category="walking"
           id="walking-list"
         />
-        <FestivalList
+        <CategoryList
           destinations={destinations}
+          category="festival"
           id="festival-list"
         />
-        <NatureList
+        <CategoryList
           destinations={destinations}
+          category="nature"
           id="nature-list"
         />
-        <HeritageList
+        <CategoryList
           destinations={destinations}
+          category="heritage"
           id="heritage-list"
         />
 

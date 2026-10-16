@@ -2,16 +2,15 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { Logo } from "@/components/Logo";
+import { scrollToSection } from "@/lib/utils/scroll";
 
 export function DockNavbar() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const scrollToSection = (sectionId: string) => {
+  const handleScrollToSection = (sectionId: string) => {
     setIsOpen(false);
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+    scrollToSection(sectionId);
   };
 
   const navLinks = [
@@ -32,7 +31,7 @@ export function DockNavbar() {
           <div className="fixed inset-0 z-50 sm:hidden">
             <div className="h-full bg-teal-900/95 backdrop-blur-xl p-6 flex flex-col">
               <div className="flex items-center justify-between mb-8">
-                <span className="text-2xl font-bold text-white">Lakat Iloilo</span>
+                <Logo width={140} height={46} />
                 <button
                   onClick={() => setIsOpen(false)}
                   className="text-white hover:text-white/80 transition-colors text-2xl"
@@ -44,7 +43,7 @@ export function DockNavbar() {
                 {navLinks.map((link) => (
                   <span
                     key={link.id}
-                    onClick={() => scrollToSection(link.id)}
+                    onClick={() => handleScrollToSection(link.id)}
                     className="cursor-pointer hover:text-white/80 py-3 transition-colors duration-200 border-b border-white/10 last:border-0"
                   >
                     {link.label}
@@ -56,10 +55,10 @@ export function DockNavbar() {
         </>
       )}
 
-      <nav className={`fixed top-4 left-1/2 z-50 -translate-x-1/2 rounded-2xl px-4 py-2 sm:px-8 sm:py-3 shadow-2xl bg-teal-900/95 backdrop-blur-xl border border-white/25 w-[calc(100%-2rem)] sm:w-auto sm:min-w-96 md:min-w-[28rem] ${isOpen ? 'hidden sm:flex' : 'flex'}`}>
+      <nav className={`fixed top-4 left-1/2 z-50 -translate-x-1/2 rounded-2xl px-4 py-2 sm:px-8 sm:py-3 shadow-2xl bg-teal-900/95 backdrop-blur-xl border border-white/25 w-[calc(100%-2rem)] sm:w-auto sm:min-w-96 md:min-w-md ${isOpen ? 'hidden sm:flex' : 'flex'}`}>
         <div className="flex items-center justify-between w-full">
-          <Link href="/" className="text-sm font-bold text-white sm:text-base hover:text-white/80 transition-colors">
-            Lakat Iloilo
+          <Link href="/" className="hover:opacity-80 transition-opacity mr-8 sm:mr-12">
+            <Logo width={140} height={46} />
           </Link>
           <div className="flex items-center gap-2 sm:gap-4 text-xs font-medium text-white/90 sm:text-sm">
             {navLinks.map((link) => (

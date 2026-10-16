@@ -1,12 +1,8 @@
+import { Logo } from "@/components/Logo";
+import { scrollToSection } from "@/lib/utils/scroll";
+
 export function Footer() {
   const currentYear = new Date().getFullYear();
-
-  const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <footer className="border-t border-white/20 bg-linear-to-br from-teal-900 to-emerald-800 py-12">
@@ -14,9 +10,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Branding */}
           <div>
-            <h3 className="text-2xl font-bold text-white mb-2 font-fraunces">
-              Lakat Iloilo
-            </h3>
+            <div className="mb-3">
+              <Logo width={160} height={52} />
+            </div>
             <p className="text-sm text-white/80">
               Your gateway to discovering the best of Iloilo City and Iloilo Province.
             </p>

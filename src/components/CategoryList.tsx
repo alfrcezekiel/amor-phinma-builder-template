@@ -10,26 +10,39 @@ interface Destination {
   category: string;
 }
 
-interface FoodListProps {
+interface CategoryListProps {
   destinations: Destination[];
+  category: string;
+  title?: string;
   id?: string;
 }
 
-export function FoodList({ destinations, id }: FoodListProps) {
-  const foodDestinations = destinations
-    .filter((dest) => dest.category === "food")
+const categoryDisplayNames: Record<string, string> = {
+  mountain: "Mountains & Hiking Spots",
+  food: "Foods & Dine-ins",
+  walking: "Walking Areas",
+  festival: "Festivals",
+  nature: "Nature & Parks",
+  heritage: "Heritage Sites",
+};
+
+export function CategoryList({ destinations, category, title, id }: CategoryListProps) {
+  const filteredDestinations = destinations
+    .filter((dest) => dest.category === category)
     .slice(0, 6);
 
-  if (foodDestinations.length === 0) return null;
+  if (filteredDestinations.length === 0) return null;
+
+  const displayTitle = title || categoryDisplayNames[category] || category;
 
   return (
     <section id={id} className="py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="mb-8 text-3xl font-semibold text-white">
-          Foods & Dine-ins
+          {displayTitle}
         </h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {foodDestinations.map((destination) => (
+          {filteredDestinations.map((destination) => (
             <Link
               key={destination.id}
               href={`/destinations/${destination.id}`}

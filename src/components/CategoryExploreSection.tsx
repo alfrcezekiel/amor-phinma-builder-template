@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { createClient as createBrowserClient } from "@/lib/supabase/client";
+import { scrollToSection } from "@/lib/utils/scroll";
 
 const categories = [
   { id: "mountain", name: "Mountains & Hiking Spots", emoji: "⛰️" },
@@ -31,11 +32,7 @@ const locationFilters = [
   { id: "iloilo_province", label: "Iloilo Province" },
 ];
 
-interface CategoryExploreSectionProps {
-  onCategorySelect?: (sectionId: string) => void;
-}
-
-export function CategoryExploreSection({ onCategorySelect }: CategoryExploreSectionProps) {
+export function CategoryExploreSection() {
   const [categoryCounts, setCategoryCounts] = useState<Record<string, number>>({});
   const [selectedLocation, setSelectedLocation] = useState("all");
   const supabase = createBrowserClient();
@@ -83,7 +80,7 @@ export function CategoryExploreSection({ onCategorySelect }: CategoryExploreSect
   }, [supabase, selectedLocation]);
 
   return (
-    <section className="py-16 bg-linear-to-br from-teal-900 to-emerald-800">
+    <section className="py-16">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-white mb-4 font-fraunces">
@@ -124,7 +121,7 @@ export function CategoryExploreSection({ onCategorySelect }: CategoryExploreSect
                 className="relative group overflow-hidden rounded-2xl h-48 cursor-pointer"
                 onClick={() => {
                   if (sectionId) {
-                    onCategorySelect?.(sectionId);
+                    scrollToSection(sectionId);
                   }
                 }}
               >
