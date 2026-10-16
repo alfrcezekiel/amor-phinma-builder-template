@@ -8,6 +8,7 @@ import { CategoryChips } from "@/components/CategoryChips";
 import { FeaturedCards } from "@/components/FeaturedCards";
 import { AboutIloilo } from "@/components/AboutIloilo";
 import { FeaturesSection } from "@/components/FeaturesSection";
+import { CategoryExploreSection } from "@/components/CategoryExploreSection";
 import { DestinationList } from "@/components/DestinationList";
 import { AccommodationList } from "@/components/AccommodationList";
 import { DockNavbar } from "@/components/DockNavbar";
@@ -58,6 +59,7 @@ export default function Home() {
         <div id="features">
           <FeaturesSection />
         </div>
+        <CategoryExploreSection />
       </section>
 
       <DestinationList destinations={destinations} />
